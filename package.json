@@ -1,0 +1,57 @@
+{
+    "name": "create-vite-w-cli",
+    "version": "1.0.3",
+    "description": "用于快速创建基于`vite+vue3`项目的构建工具",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "obfuscate": "javascript-obfuscator dist --output dist",
+        "build": "tsc && npm run copy-vue && npm run copy-ts && npm run copy-plugins-ts && npm run obfuscate",
+        "prepublishOnly": "npm run build",
+        "copy-vue": "copyfiles -u 1 \"utils/src/**/*.vue\" dist/utils",
+        "copy-ts": "copyfiles -u 1 \"utils/src/hooks/*.ts\" dist/utils",
+        "copy-plugins-ts": "copyfiles -u 1 \"utils/src/plugins/*.ts\" dist/utils"
+    },
+    "bin": {
+        "create-vite-w-cli": "dist/index.js"
+    },
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "keywords": [
+        "vue3",
+        "vite",
+        "cli",
+        "typescript",
+        "sass",
+        "eslint",
+        "tdesign",
+        "element-plus",
+        "tailwindcss",
+        "mock",
+        "husky"
+    ],
+    "author": "wangrl",
+    "license": "ISC",
+    "dependencies": {
+        "@types/inquirer": "^9.0.3",
+        "@types/minimist": "^1.2.2",
+        "chalk": "^5.3.0",
+        "commander": "^11.0.0",
+        "inquirer": "^9.2.11",
+        "javascript-obfuscator": "^5.4.2",
+        "minimist": "^1.2.8",
+        "ora": "^7.0.1",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.2.2"
+    },
+    "devDependencies": {
+        "copyfiles": "^2.4.1"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/"
+    },
+    "homepage": "https://github.com/priestqing/create-vite-w-cli"
+}

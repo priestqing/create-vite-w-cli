@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "NodeNext",
+        "outDir": "./dist",
+        "strict": true
+    },
+    "include": [
+        "*.ts",
+        "utils/*.ts",
+        "utils/config/vite.ts",
+        "utils/vscode/vscode.ts",
+        "utils/config/prettier.ts",
+        "utils/src/app.ts",
+        "utils/src/utils/axios.ts",
+        "utils/config/eslint.ts",
+        "utils/src/main.ts",
+        "utils/src/mock/mock.ts",
+        "utils/config/md.ts",
+        "utils/src/router/router.ts",
+        "utils/src/pages/home.ts",
+        "utils/src/index.ts",
+        "utils/config/tailwind.ts",
+        "utils/src/style.ts",
+        "utils/src/public/svg.ts",
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
