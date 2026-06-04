@@ -290,7 +290,7 @@ export default antfu(
             'vue/singleline-html-element-content-newline': 'off',
             'vue/attributes-order': 'off',
             'vue/valid-template-root': 'off',
-            'vue/no-restricted-class': ['error', '/(-$|[^a-z0-9!:\\\\-/[\\\\]%._])/u'],
+            'vue/no-restricted-class': ['error', '/^(?!animate__)(?:.*([^a-z0-9!:\\\\-/[\\\\]%._]|[^a-z0-9\\\\]]$)).*$/u'],
             'max-lines': ['error', { max: 1500, skipBlankLines: true, skipComments: true }]
         },
     },

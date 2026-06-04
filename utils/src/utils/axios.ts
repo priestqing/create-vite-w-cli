@@ -115,7 +115,7 @@ const _configLoaing = (answers: answersType) => {
 
     if (answers['w-ui'] == 'element-plus') {
         configStr += `
-let loading: any = null
+let loading: ReturnType<typeof ElLoading.service> | null = null
 const loadingShow = () => {
     loading = ElLoading.service({
         lock: true,

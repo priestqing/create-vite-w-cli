@@ -1,9 +1,9 @@
 export const envStr = () => {
-    return `
-    VITE_SERVER_URL = "http://localhost:5173"
-    VITE_APP_BASE_URL = '/'
+    return `VITE_SERVER_URL="http://localhost:5173"
+VITE_APP_BASE_URL='/'
     `
 }
+
 
 export const dts = () => {
     return `declare global {
