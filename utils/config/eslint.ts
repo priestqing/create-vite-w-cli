@@ -263,7 +263,7 @@ export const eslintConfigStr = () => {
 export default antfu(
     {
         stylistic: {
-            indent: 4,
+            indent: 4
         },
         // TypeScript and Vue are autodetected, you can also explicitly enable them:
         typescript: true,
@@ -279,7 +279,7 @@ export default antfu(
             '**/*.json',
             'vite-plugins/*',
             '*.yml'
-        ],
+        ]
     },
     {
         // vue
@@ -291,8 +291,10 @@ export default antfu(
             'vue/attributes-order': 'off',
             'vue/valid-template-root': 'off',
             'vue/no-restricted-class': ['error', '/^(?!animate__)(?:.*([^a-z0-9!:\\\\-/[\\\\]%._]|[^a-z0-9\\\\]]$)).*$/u'],
-            'max-lines': ['error', { max: 1500, skipBlankLines: true, skipComments: true }]
-        },
+            'unicorn/filename-case': ['error', { case: 'pascalCase' }],
+            'max-lines': ['error', { max: 1500, skipBlankLines: true, skipComments: true }],
+            'style/operator-linebreak': 'off'
+        }
     },
     {
         files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
@@ -303,37 +305,37 @@ export default antfu(
     {
         // all
         rules: {
-            'style/indent' : 'warn',
-            'style/eol-last' : 'off',
-            'style/key-spacing' : 'off',
-            'style/comma-dangle' : 'off',
-            'style/spaced-comment' : 'off',
-            'style/no-tabs' : 'off',
-            'style/no-multiple-empty-lines' : 'off',
-            'style/brace-style' : 'off',
-            'style/quotes' : 'warn',
-            'style/no-trailing-spaces' : 'off',
+            'style/indent': 'warn',
+            'style/eol-last': 'off',
+            'style/key-spacing': 'off',
+            'style/comma-dangle': 'off',
+            'style/spaced-comment': 'off',
+            'style/no-tabs': 'off',
+            'style/no-multiple-empty-lines': 'off',
+            'style/brace-style': 'off',
+            'style/quotes': 'warn',
+            'style/no-trailing-spaces': 'off',
             'style/arrow-parens': 'off',
             'style/member-delimiter-style': 'off',
-            'node/prefer-global/process' : 'off',
-            'array-callback-return' : 'off',
+            'node/prefer-global/process': 'off',
+            'array-callback-return': 'off',
             'perfectionist/sort-imports': 'off',
             'perfectionist/sort-named-imports': 'off',
-            'jsdoc/check-param-names' : 'off',
+            'jsdoc/check-param-names': 'off',
             'ts/no-use-before-define': 'off',
             'ts/no-explicit-any': 'error',
-            'no-console' : 'warn'
+            'no-console': 'warn'
         }
     },
     {
         // antfu
         rules: {
-            'antfu/top-level-function' : 'off',
+            'antfu/top-level-function': 'off',
             'antfu/if-newline': 'off',
             'antfu/curly': 'off',
-            'antfu/consistent-list-newline': 'off',
+            'antfu/consistent-list-newline': 'off'
         }
-    },
+    }
 )
 `
 }
