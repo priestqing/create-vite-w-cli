@@ -7,13 +7,14 @@ VITE_APP_BASE_URL='/'
 
 export const dts = () => {
     return `declare global {
-        interface Window {
-            globalConfig: {
-                VITE_SERVER_URL: string;
-            };
+    interface Window {
+        globalConfig: {
+            VITE_SERVER_URL: string;
         }
     }
-    export { };`
+}
+export { }
+`
 }
 
 export const pubConfig = () => {

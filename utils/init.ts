@@ -29,6 +29,8 @@ import aseStr from './src/utils/ase.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+const templatePath = path.join(__dirname, 'templates')
+
 export const __init = (answers: answersType) => {
     const projectName = answers['project-name']
     fs.mkdirSync(projectName)
@@ -146,6 +148,10 @@ export const __init = (answers: answersType) => {
         fs.copyFileSync(sourceFilePlugin, `${projectName}/src/plugins/UploadAdapter.ts`)
     }
 
-
+    // agents
+    fs.cpSync(templatePath, projectName, {
+        recursive: true,
+        force: true
+    })
 
 }
