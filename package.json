@@ -1,6 +1,6 @@
 {
     "name": "create-vite-w-cli",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "用于快速创建基于`vite+vue3`项目的构建工具",
     "main": "index.js",
     "type": "module",
