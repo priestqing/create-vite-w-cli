@@ -51,5 +51,12 @@
     "publishConfig": {
         "registry": "https://registry.npmjs.org/"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/priestqing/create-vite-w-cli"
+    },
+    "bugs": {
+        "url": "https://github.com/priestqing/create-vite-w-cli/issues"
+    },
     "homepage": "https://github.com/priestqing/create-vite-w-cli"
 }
