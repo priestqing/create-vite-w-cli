@@ -10,7 +10,7 @@
         "copy-vue": "copyfiles -u 1 \"utils/src/**/*.vue\" dist/utils",
         "copy-ts": "copyfiles -u 1 \"utils/src/hooks/*.ts\" dist/utils",
         "copy-plugins-ts": "copyfiles -u 1 \"utils/src/plugins/*.ts\" dist/utils",
-        "copy-templates": "copyfiles -u 1 \"utils/templates/**/*\" dist/utils"
+        "copy-templates": "copyfiles -u 1 \"utils/templates/**/*\" \"utils/templates/.github/**/*\" \"utils/templates/.cursor/**/*\" \"utils/templates/.windsurfrules\" dist/utils"
     },
     "bin": {
         "create-vite-w-cli": "dist/index.js"

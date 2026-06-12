@@ -6,19 +6,33 @@
 - Group API files by business domain.
 - Keep request functions small and typed.
 - Do not put UI logic in API modules.
+- Reuse the project request utility instead of creating another HTTP client.
 
-## Types
+## API File Structure
 
-- Define request and response types for public API functions.
-- Do not use `any`.
-- Shared API types should live in `src/types` or a nearby `types.ts` file.
-- If API type declarations exceed 50 lines, move them into a dedicated type file.
+- Use one API module per business domain when practical.
+- Use `src/apis/user.ts` for user request functions.
+- Use `src/apis/user.types.ts` for user domain, request, and response types.
+- Use `src/apis/order.ts` and `src/apis/order.types.ts` for order-related APIs and types.
+- Keep API modules focused on request construction, response typing, and request utility usage.
 
-## Naming
+## Type Ownership
 
-- API functions use camelCase.
+- API modules must reuse existing domain types instead of redeclaring them.
+- Domain entity types, request params, and response types should live near the related API module.
+- Prefer `src/apis/*.types.ts` for API-related shared types.
+- If an API response returns a user entity, reuse `IUser` from `src/apis/user.types.ts` when it already exists.
+- Do not define another `IUser` in `src/apis/user.ts` or a Vue component if `IUser` already exists in `src/apis/user.types.ts`.
+- Component-local types should not duplicate API/domain entity types.
+- If a type is used by UI, API, stores, or composables, keep a single exported definition in the related `src/apis/*.types.ts` file.
+- Do not create `src/types` unless the user explicitly requests a cross-domain type directory.
+
+## Type Naming
+
+- Interfaces use `I` + PascalCase, such as `IUser`, `IUserListParams`, `IUserListResponse`.
+- Type aliases use PascalCase, such as `UserStatus`.
+- API request function names use camelCase.
 - Function names should describe the operation: `getUserList`, `createOrder`, `updateProfile`.
-- Response interfaces may use `I` + PascalCase, such as `IUserListResponse`.
 
 ## Error Handling
 
@@ -30,5 +44,5 @@
 ## Request Wrapper
 
 - Reuse the project request utility.
-- Do not create another HTTP client unless there is a clear reason.
 - Keep base URL, token injection, and response normalization centralized.
+- Do not create another request wrapper unless there is a clear project-level reason.

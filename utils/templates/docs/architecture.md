@@ -7,9 +7,9 @@
 - `src/router`: route definitions and navigation guards.
 - `src/store`: Pinia stores and persisted state.
 - `src/apis`: API modules grouped by business domain.
+- `src/apis/*.types.ts`: shared domain, request, and response types grouped by API domain.
 - `src/utils`: framework-independent utilities.
 - `src/hooks` or `src/composables`: reusable composition logic.
-- `src/types`: shared TypeScript types.
 - `src/assets`: static assets.
 
 ## Module Boundaries
