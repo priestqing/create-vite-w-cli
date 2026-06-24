@@ -80,7 +80,12 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const ignoreList = ['node_modules', '.git', '.vscode', 'dist', '.husky', 'public', '.VSCodeCounter', '.idea']
+const ignoreList = [
+    '.vscode','.idea','.git',
+    '.husky','.cursor','.github',
+    '.VSCodeCounter','node_modules','dist',
+    'public',
+]
 
 interface FileType {
     filePath: string
